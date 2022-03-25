@@ -1,6 +1,8 @@
 #pragma once
 #include<SDL.h>
 
+
+
 #define N 3
 #define W_WIDTH 1280
 #define W_HEIGHT 700

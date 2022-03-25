@@ -11,16 +11,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Game.h"
-
+#include "Render.h"
 SDL_bool Init(void);
 void Quit(void);
-void Render(void);
 void InitGame(void);
 void ClickOnCell(Uint8 row, Uint8 col);
-
-SDL_Window* Window;
-SDL_Renderer* Renderer;
-game_t Game;
 
 int main(int argc, char** argv)
 {
@@ -50,9 +45,6 @@ int main(int argc, char** argv)
 	}
 	exit(EXIT_SUCCESS);
 }
-
-
-
 SDL_bool Init(void)
 {
 	if (SDL_Init(SDL_INIT_VIDEO))return SDL_FALSE;
@@ -80,13 +72,6 @@ void Quit(void)
 	if (Renderer) SDL_DestroyRenderer(Renderer);
 	if (Window) SDL_DestroyWindow(Window);
 	SDL_Quit();
-}
-
-void Render(void)
-{
-	SDL_SetRenderDrawColor(Renderer, 0, 0, 0, 255);
-	SDL_RenderClear(Renderer);
-	SDL_RenderPresent(Renderer);
 }
 void ClickOnCell(Uint8 row, Uint8 col)
 {
