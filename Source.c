@@ -4,7 +4,9 @@
 	Brief Description :
 		This is my first programming project.
 		I am making a TicTacToe Clone. No need for further info.
-	Date of update : 24/03/2022
+		Update : I made the rendering of the different game states.
+		TODO : Implement the ClickOnCell function
+	Date of update : 26/03/2022
 */
 
 #include <SDL.h>
@@ -12,10 +14,16 @@
 #include <stdlib.h>
 #include "Game.h"
 #include "Render.h"
+
 SDL_bool Init(void);
 void Quit(void);
 void InitGame(void);
 void ClickOnCell(Uint8 row, Uint8 col);
+
+const int WINDOW_WIDTH = W_WIDTH;
+const int WINDOW_HEIGHT = W_HEIGHT;
+const float CELL_WIDTH = (float)W_WIDTH / N;
+const float CELL_HEIGHT = (float)W_HEIGHT / N;
 
 int main(int argc, char** argv)
 {
